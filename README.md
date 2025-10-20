@@ -1,16 +1,13 @@
-# roqu_copy_trader
+# Roqu Copy Trader
 
-A new Flutter project.
+A cryptocurrency copy trading app built in flutter.
 
-## Getting Started
+## Setup
+add `.env` file in root directory with the following values
+```
+TWELVE_DATA_API_KEY="**twelve data api key**"
+```
 
-This project is a starting point for a Flutter application.
+Run `flutter pub get` to get all dependencies
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Run `flutter run` to build the mobile app and youre set
