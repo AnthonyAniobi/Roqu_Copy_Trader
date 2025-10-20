@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/services/app_routes.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class HomeCopyTradingBannerWidget extends StatelessWidget {
@@ -70,13 +71,11 @@ class HomeCopyTradingBannerWidget extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      Text(
+                      AppText.inter(
                         'Discover our latest feature. Follow and watch the PRO traders closely and win like a PRO! We are rooting for you!',
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.bgPrimary,
-                        ),
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.bgPrimary,
                       ),
                     ],
                   ),

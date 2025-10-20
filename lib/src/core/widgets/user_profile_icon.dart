@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
+import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 
 class UserProfileIcon extends StatelessWidget {
   final String initial;
@@ -42,13 +44,11 @@ class UserProfileIcon extends StatelessWidget {
                 color: color.withAlpha((0.14 * 255).toInt()),
               ),
               alignment: Alignment.center,
-              child: Text(
+              child: AppText.inter(
                 initial,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14.4.sp,
-                  fontWeight: FontWeight.w700,
-                ),
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: AppColors.foregroundPrimary,
               ),
             ),
           ),

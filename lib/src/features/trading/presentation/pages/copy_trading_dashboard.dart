@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/services/app_routes.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_appbar.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 import 'package:roqu_copy_trader/src/features/trading/domain/entities/trader_listing_entity.dart';
@@ -30,9 +31,11 @@ class CopyTradingDashboard extends StatelessWidget {
               ],
             ),
             20.verticalSpace,
-            Text(
+            AppText.inter(
               'PRO Traders',
-              style: TextStyle(fontSize: 16.sp, color: AppColors.textPrimary),
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w400,
+              color: AppColors.textPrimary,
             ),
             8.verticalSpace,
             Expanded(
@@ -142,24 +145,19 @@ class HomeHeaderButton extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
+                      AppText.inter(
                         myDashboard ? 'My dashboard' : 'Become a PRO trader',
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.bgPrimary,
-                        ),
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.bgPrimary,
                       ),
                       Row(
                         children: [
                           Expanded(
-                            child: Text(
+                            child: AppText.inter(
                               myDashboard ? 'View trades' : 'Apply Now',
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.bgSecondary,
-                              ),
+                              fontSize: 12.sp,
+                              color: AppColors.bgSecondary,
                             ),
                           ),
                           Icon(

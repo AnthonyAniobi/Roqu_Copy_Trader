@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class ListedCoinsWidget extends StatelessWidget {
@@ -34,21 +35,17 @@ class ListedCoinsWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      AppText.inter(
                         'Bitcoin',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.textPrimary,
-                        ),
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textPrimary,
                       ),
                       2.verticalSpace,
-                      Text(
+                      AppText.inter(
                         '\$${index * 1000}',
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          color: AppColors.textSecondary,
-                        ),
+                        fontSize: 12.sp,
+                        color: AppColors.textSecondary,
                       ),
                     ],
                   ),
@@ -58,18 +55,18 @@ class ListedCoinsWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    AppText.inter(
                       '\$22,840',
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.textPrimary,
-                      ),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.textPrimary,
                     ),
+
                     2.verticalSpace,
-                    Text(
+                    AppText.inter(
                       '+5.32%',
-                      style: TextStyle(fontSize: 12.sp, color: AppColors.error),
+                      fontSize: 12.sp,
+                      color: AppColors.error,
                     ),
                   ],
                 ),

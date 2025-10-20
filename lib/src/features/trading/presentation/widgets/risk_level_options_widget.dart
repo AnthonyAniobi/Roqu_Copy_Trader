@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/extensions/num_extension.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class RiskLevelOptionsWidget extends StatelessWidget {
@@ -73,21 +74,17 @@ class RiskLevelOptionsWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    AppText.encodeSans(
                       title,
-                      style: TextStyle(
-                        color: AppColors.foregroundPrimary,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.textPrimary,
                     ),
-                    Text(
+                    AppText.inter(
                       description,
-                      style: TextStyle(
-                        color: AppColors.foregroundPrimary,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.textSecondary,
                     ),
                   ],
                 ),

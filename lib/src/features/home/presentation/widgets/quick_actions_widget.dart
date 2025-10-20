@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class QuickActionsWidget extends StatelessWidget {
@@ -40,13 +41,11 @@ class QuickActionsWidget extends StatelessWidget {
                 bottom: Radius.circular(14.r),
               ),
             ),
-            child: Text(
+            child: AppText.inter(
               'See more',
-              style: TextStyle(
-                fontSize: 12.sp,
-                color: AppColors.foregroundLink,
-                fontWeight: FontWeight.w500,
-              ),
+              fontSize: 12.sp,
+              color: AppColors.foregroundLink,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],
@@ -63,14 +62,7 @@ class QuickActionsWidget extends StatelessWidget {
           child: CustomImage(icon, width: 24.w, height: 24.h),
         ),
         5.verticalSpace,
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 12.sp,
-            color: AppColors.textSecondary,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
+        AppText.inter(title, fontSize: 12.sp, color: AppColors.textSecondary),
       ],
     );
   }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class MoreOptionsWidget extends StatelessWidget {
@@ -36,13 +37,11 @@ class MoreOptionsWidget extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 children: [
-                  Text(
+                  AppText.inter(
                     'Trade',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: AppColors.textSecondary,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.textSecondary,
                   ),
                   10.verticalSpace,
                   groupWidget([
@@ -79,13 +78,11 @@ class MoreOptionsWidget extends StatelessWidget {
                     ),
                   ]),
                   20.verticalSpace,
-                  Text(
+                  AppText.inter(
                     'Earn',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: AppColors.textSecondary,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.textSecondary,
                   ),
                   10.verticalSpace,
                   groupWidget([
@@ -147,13 +144,11 @@ class MoreOptionsWidget extends StatelessWidget {
             ),
             12.horizontalSpace,
             Expanded(
-              child: Text(
+              child: AppText.inter(
                 title,
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: AppColors.textPrimary,
-                  fontWeight: FontWeight.w400,
-                ),
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w400,
+                color: AppColors.textPrimary,
               ),
             ),
             if (isNew) ...[
@@ -164,13 +159,11 @@ class MoreOptionsWidget extends StatelessWidget {
                   color: Color(0xFFF79009).withAlpha(20),
                   borderRadius: BorderRadius.circular(4.r),
                 ),
-                child: Text(
+                child: AppText.inter(
                   'New',
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    color: Color(0xFFF79009),
-                    fontWeight: FontWeight.w400,
-                  ),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xFFF79009),
                 ),
               ),
             ],

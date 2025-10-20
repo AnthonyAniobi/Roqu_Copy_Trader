@@ -25,7 +25,6 @@ class AppSvg {
   static String transactions = "assets/svg/transactions.svg";
   static String usFlag = "assets/svg/us_flag.svg";
   static String userBadge = "assets/svg/user_badge.svg";
-  static String verifiedCircle = "assets/svg/verified_circle.svg";
   static String wallet = "assets/svg/wallet.svg";
   static String withdraw = "assets/svg/withdraw.svg";
   static String coinStack = "assets/svg/coin_stack.svg";
@@ -34,9 +33,15 @@ class AppSvg {
   static String notificationUpdate = "assets/svg/notification_update.svg";
   static String bitcoin = "assets/svg/bitcoin.svg";
   static String ethereum = "assets/svg/ethereum.svg";
+  static String tetherCoin = "assets/svg/tether_coin.svg";
+  static String verifiedIcon = "assets/svg/verified_icon.svg";
+  static String dodgeCoin = "assets/svg/dodge_coin.svg";
+  static String litecoin = "assets/svg/litecoin.svg";
+  static String verifiedTick = "assets/svg/verified_tick.svg";
 }
 
 class AppImages {
   static String unlock = "assets/images/unlock.png";
   static String goldCrown = "assets/images/gold_crown.png";
+  static String sampleImg = "assets/images/sampleImg.jpeg";
 }

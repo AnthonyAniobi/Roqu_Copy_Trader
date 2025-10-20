@@ -5,6 +5,7 @@ import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/enums/risk_level_enum.dart';
 import 'package:roqu_copy_trader/src/core/services/app_routes.dart';
 import 'package:roqu_copy_trader/src/core/widgets/app_button.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_appbar.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/risk_level_options_widget.dart';
 
@@ -42,22 +43,18 @@ class _CopyTradingRiskLevelScreenState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             20.verticalSpace,
-            Text(
+            AppText.inter(
               'What risk level are you \ncomfortable exploring?',
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.textPrimary,
-              ),
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w700,
+              color: AppColors.textPrimary,
             ),
             5.verticalSpace,
-            Text(
+            AppText.inter(
               'Choose a level',
-              style: TextStyle(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-                color: AppColors.textSecondary,
-              ),
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
+              color: AppColors.textSecondary,
             ),
             20.verticalSpace,
             RiskLevelOptionsWidget(

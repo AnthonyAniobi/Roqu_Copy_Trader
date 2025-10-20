@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/extensions/context_extension.dart';
@@ -76,7 +77,7 @@ class CustomNavBarWidget extends StatelessWidget {
               ),
               AnimatedDefaultTextStyle(
                 child: Text(data.title),
-                style: TextStyle(
+                style: GoogleFonts.inter(
                   color: isSelected
                       ? AppColors.foregroundPrimary
                       : AppColors.textSecondary,
@@ -85,16 +86,6 @@ class CustomNavBarWidget extends StatelessWidget {
                 ),
                 duration: 200.milliseconds,
               ),
-              // Text(
-              //   data.title,
-              //   style: TextStyle(
-              //     color: isSelected
-              //         ? AppColors.foregroundPrimary
-              //         : AppColors.textSecondary,
-              //     fontWeight: FontWeight.w500,
-              //     fontSize: 12.sp,
-              //   ),
-              // ),
             ],
           ),
         ),

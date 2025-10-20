@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/services/navigation_backstack_notifier.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
@@ -27,13 +28,11 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     Widget? titleWidget;
 
     if (titleText != null) {
-      titleWidget = Text(
+      titleWidget = AppText.inter(
         titleText!,
-        style: TextStyle(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w400,
-          color: AppColors.textPrimary,
-        ),
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textPrimary,
       );
     } else if (title != null) {
       titleWidget = title!;

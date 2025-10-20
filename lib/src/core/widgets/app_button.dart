@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 
 class AppButton extends StatelessWidget {
   final String text;
@@ -34,13 +35,10 @@ class AppButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
           ),
           child: Center(
-            child: Text(
+            child: AppText.inter(
               text,
-              style: TextStyle(
-                color: AppColors.foregroundPrimary,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
-              ),
+              fontWeight: FontWeight.w500,
+              color: AppColors.textPrimary,
             ),
           ),
         ),

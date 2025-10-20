@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class MyDashboardHeader extends StatelessWidget {
@@ -26,21 +27,18 @@ class MyDashboardHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                AppText.inter(
                   'Copy trading assets',
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    color: AppColors.textSecondary,
-                  ),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.textSecondary,
                 ),
                 4.verticalSpace,
-                Text(
+                AppText.inter(
                   'Copy trading assets',
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    color: AppColors.textPrimary,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textPrimary,
                 ),
               ],
             ),
@@ -55,21 +53,18 @@ class MyDashboardHeader extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      AppText.inter(
                         'Copy trading assets',
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          color: AppColors.textSecondary,
-                        ),
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textSecondary,
                       ),
                       4.verticalSpace,
-                      Text(
+                      AppText.inter(
                         '\$12,345.67',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          color: AppColors.textPrimary,
-                          fontWeight: FontWeight.w700,
-                        ),
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textPrimary,
                       ),
                     ],
                   ),
@@ -78,12 +73,11 @@ class MyDashboardHeader extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    AppText.inter(
                       'Todays\'s PNL',
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        color: AppColors.textSecondary,
-                      ),
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.textSecondary,
                     ),
                     4.verticalSpace,
                     Row(
@@ -96,13 +90,11 @@ class MyDashboardHeader extends StatelessWidget {
                           color: AppColors.textSuccess,
                         ),
                         4.horizontalSpace,
-                        Text(
+                        AppText.inter(
                           '207.25',
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: AppColors.textSuccess,
-                            fontWeight: FontWeight.w700,
-                          ),
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.textSuccess,
                         ),
                       ],
                     ),

@@ -7,6 +7,7 @@ import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/services/app_routes.dart';
 import 'package:roqu_copy_trader/src/core/widgets/app_button.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_appbar.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/copy_trading_intro_widget.dart';
 
@@ -110,13 +111,11 @@ class _CopyTradingIntroScreenState extends State<CopyTradingIntroScreen> {
               ),
             ),
             10.verticalSpace,
-            Text(
+            AppText.inter(
               'Watch a how to video',
-              style: TextStyle(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-                color: AppColors.foregroundLink,
-              ),
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
+              color: AppColors.foregroundLink,
             ),
             40.verticalSpace,
           ],

@@ -12,6 +12,7 @@ class AppColors {
   static const Color error = Color(0xFFF04438);
   static const Color textSuccess = Color(0xFF17B26A);
   static const Color foregroundLink = Color(0xFF85D1F0);
+  static const Color blue = Color(0xFF5283FF);
   static const Color shimmerBase = Color(0xFF2A2F36);
   static const Color shimmerHighlight = Color(0xFF3B4048);
 }

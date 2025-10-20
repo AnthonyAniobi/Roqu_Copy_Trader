@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 import 'package:roqu_copy_trader/src/features/home/presentation/widgets/home_copy_trading_banner.dart';
 import 'package:roqu_copy_trader/src/features/home/presentation/widgets/home_update_cards.dart';
@@ -74,13 +76,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
+                            AppText.inter(
                               'Crypto',
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.bgPrimary,
-                              ),
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.bgPrimary,
                             ),
                             SizedBox(width: 4.w),
                             Icon(
@@ -181,13 +181,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        AppText.inter(
                           'Your GBP Balance',
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            color: AppColors.textSecondary,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.textSecondary,
                         ),
                         4.horizontalSpace,
                         Icon(
@@ -205,14 +203,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           TextSpan(
                             text: '.00',
-                            style: TextStyle(
+                            style: GoogleFonts.inter(
                               fontSize: 12.sp,
                               color: AppColors.textPrimary,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
                         ],
-                        style: TextStyle(
+                        style: GoogleFonts.inter(
                           fontSize: 32.sp,
                           color: AppColors.textPrimary,
                           fontWeight: FontWeight.w800,
@@ -226,13 +224,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     32.verticalSpace,
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Text(
+                      child: AppText.inter(
                         'Stay Updated',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          color: AppColors.textPrimary,
-                          fontWeight: FontWeight.w700,
-                        ),
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textPrimary,
                       ),
                     ),
                     16.verticalSpace,
@@ -268,21 +264,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          AppText.inter(
                             'Listed Coins',
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: AppColors.textPrimary,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.textPrimary,
                           ),
-                          Text(
+                          AppText.inter(
                             'See all',
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              color: AppColors.foregroundLink,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.foregroundLink,
                           ),
                         ],
                       ),

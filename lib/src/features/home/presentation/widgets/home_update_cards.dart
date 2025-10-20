@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class HomeUpdateCards extends StatelessWidget {
@@ -41,22 +42,18 @@ class HomeUpdateCards extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            AppText.inter(
                               'Delisting Coins',
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: AppColors.textPrimary,
-                                fontWeight: FontWeight.w600,
-                              ),
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.textPrimary,
                             ),
 
-                            Text(
+                            AppText.inter(
                               'View the list of coins we are delisting',
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                color: AppColors.textSecondary,
-                                fontWeight: FontWeight.w400,
-                              ),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.textSecondary,
                             ),
                           ],
                         ),
@@ -76,13 +73,11 @@ class HomeUpdateCards extends StatelessWidget {
                     ),
                     color: Color(0xFFFF554A).withAlpha((0.05 * 255).toInt()),
                   ),
-                  child: Text(
+                  child: AppText.inter(
                     'Urgent Notice',
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      color: Color(0xFFFF554A),
-                      fontWeight: FontWeight.w500,
-                    ),
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFFFF554A),
                   ),
                 ),
               ),

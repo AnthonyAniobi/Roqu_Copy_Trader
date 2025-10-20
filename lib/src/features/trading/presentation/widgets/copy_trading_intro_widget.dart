@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class CopyTradingIntroWidget extends StatelessWidget {
@@ -21,22 +22,18 @@ class CopyTradingIntroWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         10.verticalSpace,
-        Text(
+        AppText.inter(
           title,
-          style: TextStyle(
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w700,
-            color: AppColors.textPrimary,
-          ),
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w700,
+          color: AppColors.textPrimary,
         ),
         5.verticalSpace,
-        Text(
+        AppText.inter(
           description,
-          style: TextStyle(
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400,
-            color: AppColors.textSecondary,
-          ),
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+          color: AppColors.textSecondary,
         ),
         Expanded(child: Align(child: CustomImage(image))),
       ],

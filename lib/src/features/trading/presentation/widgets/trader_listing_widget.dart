@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
 import 'package:roqu_copy_trader/src/core/extensions/num_extension.dart';
+import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 import 'package:roqu_copy_trader/src/core/widgets/user_profile_icon.dart';
 import 'package:roqu_copy_trader/src/features/trading/domain/entities/trader_listing_entity.dart';
@@ -44,13 +45,11 @@ class TraderListingWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          AppText.inter(
                             trader.name,
-                            style: TextStyle(
-                              color: AppColors.textPrimary,
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.textPrimary,
                           ),
                           Row(
                             children: [
@@ -61,12 +60,11 @@ class TraderListingWidget extends StatelessWidget {
                                 height: 12.r,
                               ),
                               4.horizontalSpace,
-                              Text(
+                              AppText.inter(
                                 trader.followers.toString(),
-                                style: TextStyle(
-                                  color: AppColors.foregroundLink,
-                                  fontSize: 12.sp,
-                                ),
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.foregroundLink,
                               ),
                             ],
                           ),
@@ -86,13 +84,11 @@ class TraderListingWidget extends StatelessWidget {
                             ),
                             padding: EdgeInsets.zero,
                           ),
-                          child: Text(
+                          child: AppText.inter(
                             'Copy',
-                            style: TextStyle(
-                              color: AppColors.textSecondary,
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.textPrimary,
                           ),
                         ),
                       ),
@@ -111,27 +107,24 @@ class TraderListingWidget extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
+                                AppText.inter(
                                   'ROI',
-                                  style: TextStyle(
-                                    color: AppColors.textSecondary,
-                                    fontSize: 12.sp,
-                                  ),
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.textSecondary,
                                 ),
-                                Text(
+                                AppText.inter(
                                   trader.roiString,
-                                  style: GoogleFonts.encodeSans(
-                                    color: AppColors.textSuccess,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: AppColors.textSuccess,
                                 ),
                                 Text.rich(
                                   TextSpan(
                                     children: [
                                       TextSpan(
                                         text: 'Total PNL: ',
-                                        style: TextStyle(
+                                        style: GoogleFonts.inter(
                                           color: AppColors.textSecondary,
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w400,
@@ -140,7 +133,7 @@ class TraderListingWidget extends StatelessWidget {
                                       TextSpan(
                                         text: trader.totalProfit
                                             .toMoneyFormat(),
-                                        style: TextStyle(
+                                        style: GoogleFonts.inter(
                                           color: AppColors.textPrimary,
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w700,
@@ -183,7 +176,7 @@ class TraderListingWidget extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: 'Win rate: ',
-                        style: TextStyle(
+                        style: GoogleFonts.inter(
                           color: AppColors.textSecondary,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
@@ -191,7 +184,7 @@ class TraderListingWidget extends StatelessWidget {
                       ),
                       TextSpan(
                         text: '${trader.winRate}%',
-                        style: TextStyle(
+                        style: GoogleFonts.inter(
                           color: AppColors.textPrimary,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
@@ -206,7 +199,7 @@ class TraderListingWidget extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: 'AUM: ',
-                        style: TextStyle(
+                        style: GoogleFonts.inter(
                           color: AppColors.textSecondary,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
@@ -214,7 +207,7 @@ class TraderListingWidget extends StatelessWidget {
                       ),
                       TextSpan(
                         text: trader.totalProfit.toMoneyFormat(),
-                        style: TextStyle(
+                        style: GoogleFonts.inter(
                           color: AppColors.textPrimary,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
