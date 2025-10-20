@@ -2,24 +2,33 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:roqu_copy_trader/src/core/enums/load_status_enum.dart';
 import 'package:roqu_copy_trader/src/features/trading/domain/entities/price_entity.dart';
 import 'package:roqu_copy_trader/src/features/trading/domain/usecases/get_price_stream.dart';
 
-class TradingCubit extends Cubit<TradingState> {
+class PriceListingCubit extends Cubit<PriceListingState> {
   final GetPriceStream getPriceStream;
-  StreamSubscription<List<PriceEntity>>? _subscription;
+  StreamSubscription<PriceEntity>? _subscription;
 
-  TradingCubit(this.getPriceStream) : super(TradingInitial());
+  PriceListingCubit(this.getPriceStream) : super(PriceListingState());
 
-  void _onSubscribe(SubscribeToPrice event, Emitter<PriceState> emit) {
+  Future<void> subscribe() async {
     _subscription?.cancel();
-    emit(PriceLoading());
-
-    _subscription = getPriceStream(event.symbol).listen(
-      (price) => add(PriceUpdated(price)),
-      onError: (e) => add(PriceError(e.toString())),
+    emit(state.copyWith(loadStatus: LoadStatusEnum.loading));
+    final symbols = ["BTC/USD", "ETH/USD", "DOGE/USD", "LTC/USD", "THETA/USD"];
+    _subscription = getPriceStream(symbols).listen(
+      (price) => _updatePrice(price),
+      onError: (e) => _priceError(e.toString()),
       cancelOnError: false,
     );
+  }
+
+  void _updatePrice(PriceEntity price) {
+    emit(state.copyWith(loadStatus: LoadStatusEnum.success));
+  }
+
+  void _priceError(String message) {
+    emit(state.copyWith(loadStatus: LoadStatusEnum.failed));
   }
 
   @override
@@ -29,9 +38,14 @@ class TradingCubit extends Cubit<TradingState> {
   }
 }
 
-class TradingState extends Equatable {
-  const TradingState();
+class PriceListingState extends Equatable {
+  final LoadStatusEnum loadStatus;
+  const PriceListingState({this.loadStatus = LoadStatusEnum.initial});
+
+  PriceListingState copyWith({LoadStatusEnum? loadStatus}) {
+    return PriceListingState(loadStatus: loadStatus ?? this.loadStatus);
+  }
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [loadStatus];
 }
