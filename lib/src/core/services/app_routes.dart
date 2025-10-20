@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roqu_copy_trader/src/core/services/navigation_backstack_notifier.dart';
@@ -23,22 +24,45 @@ class AppRoutes {
       GoRoute(path: tabOverlay, builder: (_, __) => const NavOverlayScreen()),
       GoRoute(
         path: copyTradingIntro,
-        builder: (_, __) => const CopyTradingIntroScreen(),
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const CopyTradingIntroScreen()),
       ),
       GoRoute(
         path: copyTradingRiskLevel,
-        builder: (_, __) => const CopyTradingRiskLevelScreen(),
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const CopyTradingRiskLevelScreen()),
       ),
       GoRoute(
         path: copyTradingDashboard,
-        builder: (_, __) => const CopyTradingDashboard(),
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const CopyTradingDashboard()),
       ),
       GoRoute(
         path: proTraderDetails,
-        builder: (_, __) => const ProTraderDetailScreen(),
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const ProTraderDetailScreen()),
       ),
-      GoRoute(path: myDashboard, builder: (_, __) => const MyDashboardScreen()),
+      GoRoute(
+        path: myDashboard,
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const MyDashboardScreen()),
+      ),
     ],
-    errorBuilder: (context, state) => const PageNotFoundScreen(),
+    errorPageBuilder: (context, state) =>
+        fadePageBuilder(state, const PageNotFoundScreen()),
   );
+
+  static fadePageBuilder(GoRouterState state, Widget child) {
+    return CustomTransitionPage(
+      transitionDuration: Duration(milliseconds: 500),
+      key: state.pageKey,
+      child: child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return FadeTransition(
+          opacity: CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+          child: child,
+        );
+      },
+    );
+  }
 }
