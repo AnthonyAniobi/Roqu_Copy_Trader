@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
-import 'package:roqu_copy_trader/src/core/widgets/app_button.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 
 class CopyTradingIntroWidget extends StatelessWidget {

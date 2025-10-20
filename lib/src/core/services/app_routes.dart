@@ -6,12 +6,16 @@ import 'package:roqu_copy_trader/src/features/tab_navigation/presentation/pages/
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/copy_trading_dashboard.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/copy_trading_intro_screen.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/copy_trading_risk_level_screen.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/pages/my_dashboard_screen.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/pages/pro_trader_detail_screen.dart';
 
 class AppRoutes {
   static const tabOverlay = '/';
   static const copyTradingIntro = '/copy-trading-intro';
   static const copyTradingRiskLevel = '/copy-trading-risk-level';
   static const copyTradingDashboard = '/copy-trading-dashboard';
+  static const proTraderDetails = '/pro-trader-details';
+  static const myDashboard = '/my-dashboard';
 
   static final GoRouter router = GoRouter(
     observers: [GetIt.I.get<NavigationBackstackNotifier>()],
@@ -29,6 +33,11 @@ class AppRoutes {
         path: copyTradingDashboard,
         builder: (_, __) => const CopyTradingDashboard(),
       ),
+      GoRoute(
+        path: proTraderDetails,
+        builder: (_, __) => const ProTraderDetailScreen(),
+      ),
+      GoRoute(path: myDashboard, builder: (_, __) => const MyDashboardScreen()),
     ],
     errorBuilder: (context, state) => const PageNotFoundScreen(),
   );

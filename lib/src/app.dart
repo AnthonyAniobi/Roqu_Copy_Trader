@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:roqu_copy_trader/src/core/services/app_routes.dart';
 import 'package:roqu_copy_trader/src/core/services/bloc_service.dart';
 import 'package:roqu_copy_trader/src/core/styles/app_theme.dart';
@@ -21,7 +20,7 @@ class RoquApp extends StatelessWidget {
           providers: BlocService.providers,
           child: MaterialApp.router(
             title: 'Roqu Test',
-            theme: ThemeData(textTheme: GoogleFonts.interTextTheme()),
+            // theme: ThemeData(textTheme: GoogleFonts.interTextTheme()),
             darkTheme: darkTheme,
             themeMode: ThemeMode.dark,
             routerConfig: AppRoutes.router,

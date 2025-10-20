@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/services/app_routes.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_appbar.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 import 'package:roqu_copy_trader/src/features/trading/domain/entities/trader_listing_entity.dart';
@@ -38,7 +40,12 @@ class CopyTradingDashboard extends StatelessWidget {
                 itemCount: 10,
                 separatorBuilder: (context, index) => 16.verticalSpace,
                 itemBuilder: (context, index) {
-                  return TraderListingWidget(trader: TraderListingEntity.mock);
+                  return TraderListingWidget(
+                    trader: TraderListingEntity.mock,
+                    onCopyPressed: () {
+                      context.push(AppRoutes.proTraderDetails);
+                    },
+                  );
                 },
               ),
             ),
@@ -72,91 +79,101 @@ class HomeHeaderButton extends StatelessWidget {
       child: SizedBox(
         height: 118.h,
 
-        child: ClipRRect(
+        child: InkWell(
           borderRadius: BorderRadius.circular(8.r),
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: gradientColors,
-                      stops: stops,
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    // borderRadius: BorderRadius.circular(8.r),
-                  ),
-                  padding: EdgeInsets.all(12.r),
-                ),
-              ),
-              Positioned(
-                top: 40.h,
-                child: Transform.rotate(
-                  angle: -0.8378, // -48 degrees in radians
+          onTap: () {
+            if (!myDashboard) {
+              context.push(AppRoutes.proTraderDetails);
+            } else {
+              context.push(AppRoutes.myDashboard);
+            }
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8.r),
+            child: Stack(
+              children: [
+                Positioned.fill(
                   child: Container(
-                    width: 250.w,
-                    height: 114.h,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: gradientColors,
                         stops: stops,
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
                       // borderRadius: BorderRadius.circular(8.r),
                     ),
+                    padding: EdgeInsets.all(12.r),
                   ),
                 ),
-              ),
-              Positioned(
-                top: 12.h,
-                left: 12.w,
-                child: CircleAvatar(
-                  radius: 16.r,
-                  backgroundColor: AppColors.bgTertiary1,
-                  child: CustomImage(AppSvg.userTick),
-                ),
-              ),
-              Positioned(
-                left: 12.w,
-                right: 12.w,
-                bottom: 12.h,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      myDashboard ? 'My dashboard' : 'Become a PRO trader',
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.bgPrimary,
+                Positioned(
+                  top: 40.h,
+                  child: Transform.rotate(
+                    angle: -0.8378, // -48 degrees in radians
+                    child: Container(
+                      width: 250.w,
+                      height: 114.h,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: gradientColors,
+                          stops: stops,
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                        // borderRadius: BorderRadius.circular(8.r),
                       ),
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            myDashboard ? 'View trades' : 'Apply Now',
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.bgSecondary,
-                            ),
-                          ),
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          size: 12.r,
+                  ),
+                ),
+                Positioned(
+                  top: 12.h,
+                  left: 12.w,
+                  child: CircleAvatar(
+                    radius: 16.r,
+                    backgroundColor: AppColors.bgTertiary1,
+                    child: CustomImage(AppSvg.userTick),
+                  ),
+                ),
+                Positioned(
+                  left: 12.w,
+                  right: 12.w,
+                  bottom: 12.h,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        myDashboard ? 'My dashboard' : 'Become a PRO trader',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700,
                           color: AppColors.bgPrimary,
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              myDashboard ? 'View trades' : 'Apply Now',
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.bgSecondary,
+                              ),
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            size: 12.r,
+                            color: AppColors.bgPrimary,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

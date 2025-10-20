@@ -24,11 +24,15 @@ class PriceListingCubit extends Cubit<PriceListingState> {
   }
 
   void _updatePrice(PriceEntity price) {
-    emit(state.copyWith(loadStatus: LoadStatusEnum.success));
+    final updatedPrices = Map<String, PriceEntity>.from(state.prices);
+    updatedPrices[price.symbol] = price;
+    emit(
+      state.copyWith(prices: updatedPrices, loadStatus: LoadStatusEnum.success),
+    );
   }
 
   void _priceError(String message) {
-    emit(state.copyWith(loadStatus: LoadStatusEnum.failed));
+    emit(state.copyWith(loadStatus: LoadStatusEnum.failed, message: message));
   }
 
   @override
@@ -40,12 +44,29 @@ class PriceListingCubit extends Cubit<PriceListingState> {
 
 class PriceListingState extends Equatable {
   final LoadStatusEnum loadStatus;
-  const PriceListingState({this.loadStatus = LoadStatusEnum.initial});
+  final Map<String, PriceEntity> prices;
+  final String? message;
 
-  PriceListingState copyWith({LoadStatusEnum? loadStatus}) {
-    return PriceListingState(loadStatus: loadStatus ?? this.loadStatus);
+  String errorMessage() => message ?? 'An unexpected error occurred';
+
+  const PriceListingState({
+    this.loadStatus = LoadStatusEnum.initial,
+    this.prices = const {},
+    this.message,
+  });
+
+  PriceListingState copyWith({
+    LoadStatusEnum? loadStatus,
+    Map<String, PriceEntity>? prices,
+    String? message,
+  }) {
+    return PriceListingState(
+      loadStatus: loadStatus ?? this.loadStatus,
+      prices: prices ?? this.prices,
+      message: message ?? this.message,
+    );
   }
 
   @override
-  List<Object> get props => [loadStatus];
+  List<Object?> get props => [loadStatus, prices, message];
 }
