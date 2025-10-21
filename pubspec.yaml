@@ -33,6 +33,7 @@ dependencies:
   dio: ^5.9.0
   either_dart: ^1.0.0
   equatable: ^2.0.7
+  expandable: ^5.0.1
   fl_chart: ^1.1.1
   flutter:
     sdk: flutter
@@ -49,9 +50,6 @@ dependencies:
   web_socket_channel: ^3.0.3
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  mockito: ^5.4.4
   build_runner: ^2.4.13
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -60,10 +58,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  mockito: ^5.4.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -77,13 +77,10 @@ flutter:
     - assets/images/
     - assets/svg/
     - .env
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

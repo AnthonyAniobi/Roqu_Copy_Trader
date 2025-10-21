@@ -4,9 +4,13 @@ import 'package:go_router/go_router.dart';
 import 'package:roqu_copy_trader/src/core/services/navigation_backstack_notifier.dart';
 import 'package:roqu_copy_trader/src/core/widgets/page_not_found_screen.dart';
 import 'package:roqu_copy_trader/src/features/tab_navigation/presentation/pages/nav_overlay_screen.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/pages/confirm_transaction_pin_screen.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/pages/confirm_transaction_screen.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/pages/copy_success_screen.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/copy_trading_dashboard.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/copy_trading_intro_screen.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/copy_trading_risk_level_screen.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/pages/enter_amount_screen.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/my_dashboard_screen.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/pages/pro_trader_detail_screen.dart';
 
@@ -17,6 +21,10 @@ class AppRoutes {
   static const copyTradingDashboard = '/copy-trading-dashboard';
   static const proTraderDetails = '/pro-trader-details';
   static const myDashboard = '/my-dashboard';
+  static const enterAmount = '/enter-amount';
+  static const copySuccess = '/copy-success';
+  static const enterTransactionPin = '/enter-transaction-pin';
+  static const confirmTransaction = '/confirm-transaction';
 
   static final GoRouter router = GoRouter(
     observers: [GetIt.I.get<NavigationBackstackNotifier>()],
@@ -46,6 +54,26 @@ class AppRoutes {
         path: myDashboard,
         pageBuilder: (context, state) =>
             fadePageBuilder(state, const MyDashboardScreen()),
+      ),
+      GoRoute(
+        path: enterAmount,
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const EnterAmountScreen()),
+      ),
+      GoRoute(
+        path: enterTransactionPin,
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const ConfirmTransactionPinScreen()),
+      ),
+      GoRoute(
+        path: confirmTransaction,
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const ConfirmTransactionScreen()),
+      ),
+      GoRoute(
+        path: copySuccess,
+        pageBuilder: (context, state) =>
+            fadePageBuilder(state, const CopySuccessScreen()),
       ),
     ],
     errorPageBuilder: (context, state) =>

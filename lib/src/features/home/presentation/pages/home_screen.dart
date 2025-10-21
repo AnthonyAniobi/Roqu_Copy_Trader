@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
@@ -9,6 +10,7 @@ import 'package:roqu_copy_trader/src/features/home/presentation/widgets/home_cop
 import 'package:roqu_copy_trader/src/features/home/presentation/widgets/home_update_cards.dart';
 import 'package:roqu_copy_trader/src/features/home/presentation/widgets/listed_coins_widget.dart';
 import 'package:roqu_copy_trader/src/features/home/presentation/widgets/quick_actions_widget.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/cubit/price_listing_cubit.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    // context.read<PriceListingCubit>().subscribe();
     pageController = PageController(viewportFraction: 0.84, initialPage: 1);
   }
 

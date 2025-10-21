@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:roqu_copy_trader/src/core/models/app_responses.dart';
+import 'package:roqu_copy_trader/src/core/services/log_service.dart';
 import 'package:roqu_copy_trader/src/features/trading/data/models/price_model.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
@@ -18,17 +19,18 @@ class PriceWebSocketSourceImpl implements PriceWebSocketSource {
 
   @override
   Stream<PriceModel> connect(List<String> symbols) {
-    final uri = Uri.parse('wss://ws.twelvedata.com/v1/quotes/price');
+    final apiKey = dotenv.env['TWELVE_DATA_API_KEY'] ?? '';
+
+    final uri = Uri.parse(
+      'wss://ws.twelvedata.com/v1/quotes/price?apikey=$apiKey',
+    );
 
     _channel = _channelFactory?.call(uri) ?? WebSocketChannel.connect(uri);
 
     _channel!.sink.add(
       jsonEncode({
         "action": "subscribe",
-        "params": {
-          "symbols": symbols.join(','),
-          "apikey": dotenv.env['TWELVE_DATA_API_KEY'],
-        },
+        "params": {"symbols": symbols.join(',')},
       }),
     );
 

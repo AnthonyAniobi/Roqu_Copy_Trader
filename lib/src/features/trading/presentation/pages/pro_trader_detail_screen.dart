@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_assets.dart';
 import 'package:roqu_copy_trader/src/core/constants/app_colors.dart';
+import 'package:roqu_copy_trader/src/core/services/app_routes.dart';
 import 'package:roqu_copy_trader/src/core/widgets/app_button.dart';
 import 'package:roqu_copy_trader/src/core/widgets/app_text.dart';
 import 'package:roqu_copy_trader/src/core/widgets/custom_appbar.dart';
@@ -10,6 +12,8 @@ import 'package:roqu_copy_trader/src/core/widgets/custom_image.dart';
 import 'package:roqu_copy_trader/src/core/widgets/info_chip.dart';
 import 'package:roqu_copy_trader/src/core/widgets/user_profile_icon.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/all_trades_tab.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/copy_trade_agree_terms_modal.dart';
+import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/copy_trade_read_risks_modal.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/stats_tab.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/trader_chart_tab.dart';
 import 'package:roqu_copy_trader/src/features/trading/presentation/widgets/traders_tab.dart';
@@ -26,7 +30,12 @@ class ProTraderDetailScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         color: AppColors.bgSecondary,
         alignment: Alignment.topCenter,
-        child: AppButton(text: 'Copy Trade', onTap: () {}),
+        child: AppButton(
+          text: 'Copy Trade',
+          onTap: () {
+            copyTrade(context);
+          },
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -215,5 +224,26 @@ class ProTraderDetailScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> copyTrade(BuildContext context) async {
+    // Implement your copy trade logic here
+    final result = await showModalBottomSheet<bool?>(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => CopyTradeAgreeTermsModal(),
+    );
+    if (result == true) {
+      // User agreed to terms
+      final readRisks = await showModalBottomSheet<bool?>(
+        context: context,
+        backgroundColor: Colors.transparent,
+        isScrollControlled: true,
+        builder: (context) => CopyTradeReadRisksModal(),
+      );
+      if (readRisks == true) {
+        context.push(AppRoutes.enterAmount);
+      }
+    }
   }
 }

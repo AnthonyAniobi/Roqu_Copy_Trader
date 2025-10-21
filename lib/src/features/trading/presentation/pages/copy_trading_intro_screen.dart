@@ -99,13 +99,13 @@ class _CopyTradingIntroScreenState extends State<CopyTradingIntroScreen> {
                     title: 'Copy PRO traders',
                     description:
                         'Leverage expert strategies from professional traders to boost your trading results.',
-                    image: AppSvg.copyProTraders,
+                    image: AppImages.copyProTraders,
                   ),
                   CopyTradingIntroWidget(
                     title: 'Do less, Win more',
                     description:
                         'Streamline your approach to trading and increase your winning potential effortlessly.',
-                    image: AppSvg.doLessWithMore,
+                    image: AppImages.doLessWithMore,
                   ),
                 ],
               ),

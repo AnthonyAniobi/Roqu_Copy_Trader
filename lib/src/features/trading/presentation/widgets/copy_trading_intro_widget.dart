@@ -35,7 +35,9 @@ class CopyTradingIntroWidget extends StatelessWidget {
           fontWeight: FontWeight.w400,
           color: AppColors.textSecondary,
         ),
-        Expanded(child: Align(child: CustomImage(image))),
+        Expanded(
+          child: Align(child: CustomImage(image, width: 270.w)),
+        ),
       ],
     );
   }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:roqu_copy_trader/src/core/enums/load_status_enum.dart';
+import 'package:roqu_copy_trader/src/core/services/log_service.dart';
 import 'package:roqu_copy_trader/src/features/trading/domain/entities/price_entity.dart';
 import 'package:roqu_copy_trader/src/features/trading/domain/usecases/get_price_stream.dart';
 
@@ -32,6 +33,7 @@ class PriceListingCubit extends Cubit<PriceListingState> {
   }
 
   void _priceError(String message) {
+    dLog('Price stream error: $message');
     emit(state.copyWith(loadStatus: LoadStatusEnum.failed, message: message));
   }
 

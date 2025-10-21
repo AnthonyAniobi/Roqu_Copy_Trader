@@ -7,13 +7,10 @@ class AppSvg {
   static String check = "assets/svg/check.svg";
   static String closeIcon = "assets/svg/close_icon.svg";
   static String close = "assets/svg/close.svg";
-  static String copyProTraders = "assets/svg/copy_pro_traders.svg";
   static String dashboard = "assets/svg/dashboard.svg";
   static String deposit = "assets/svg/deposit.svg";
-  static String doLessWithMore = "assets/svg/do_less_with_more.svg";
   static String headphones = "assets/svg/headphones.svg";
   static String home = "assets/svg/home.svg";
-  static String importantMessage = "assets/svg/important_message.svg";
   static String info = "assets/svg/info.svg";
   static String lineChart = "assets/svg/line_chart.svg";
   static String notificationIcon = "assets/svg/notification_icon.svg";
@@ -44,4 +41,7 @@ class AppImages {
   static String unlock = "assets/images/unlock.png";
   static String goldCrown = "assets/images/gold_crown.png";
   static String sampleImg = "assets/images/sampleImg.jpeg";
+  static String importantMessage = "assets/images/important_message.png";
+  static String doLessWithMore = "assets/images/do_less_with_more.png";
+  static String copyProTraders = "assets/images/copy_pro_traders.png";
 }

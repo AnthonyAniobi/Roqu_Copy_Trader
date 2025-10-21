@@ -10,7 +10,7 @@ class PriceModel extends PriceEntity {
   factory PriceModel.fromJson(Map<String, dynamic> json) {
     return PriceModel(
       symbol: json['symbol'] ?? '',
-      price: (num.tryParse(json['price'] ?? '') ?? 0).toDouble(),
+      price: (num.tryParse(json['price'].toString()) ?? 0).toDouble(),
       time: DateTime.fromMillisecondsSinceEpoch(
         (json['timestamp'] ?? 0) * 1000,
       ),
