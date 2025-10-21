@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // context.read<PriceListingCubit>().subscribe();
+    context.read<PriceListingCubit>().subscribe();
     pageController = PageController(viewportFraction: 0.84, initialPage: 1);
   }
 
@@ -62,9 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SizedBox(height: MediaQuery.of(context).padding.top + 8.h),
-                  20.verticalSpace,
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -159,6 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
+                  74.verticalSpace,
                 ],
               ),
             ),
